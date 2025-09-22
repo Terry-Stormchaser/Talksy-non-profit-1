@@ -60,18 +60,6 @@ loginButton.addEventListener("click", () => {
   });
 });
 
-//Password Hash
-const getSHA256Hash = async (input) => {
-  const textAsBuffer = new TextEncoder().encode(input);
-  const hashBuffer = await window.crypto.subtle.digest("SHA-256", textAsBuffer);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hash = hashArray
-    .map((item) => item.toString(16).padStart(2, "0"))
-    .join("");
-  return hash;
-};
-
-
 // Chat Functionality
 const chatBox = document.getElementById("chat-box");
 const messageInput = document.getElementById("message-input");
@@ -157,6 +145,18 @@ nextButton.addEventListener("click", () => {
 });
 
 loadSong(currentSongIndex);
+
+//Password Hash
+const getSHA256Hash = async (input) => {
+  const textAsBuffer = new TextEncoder().encode(input);
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", textAsBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hash = hashArray
+    .map((item) => item.toString(16).padStart(2, "0"))
+    .join("");
+  return hash;
+};
+
 
 // Admin Panel Functionality
 const adminButton = document.getElementById("admin-button");

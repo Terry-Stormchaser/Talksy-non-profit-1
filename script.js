@@ -153,7 +153,7 @@ const clearChatButton = document.getElementById("clear-chat-button");
 
 adminButton.addEventListener("click", () => {
   const adminPassword = prompt("Enter admin password:");
-  const validAdminPassword = "admin123"; // Replace with the actual admin password
+  const validAdminPassword = "$Admin_Passwd"; // Replace with the actual admin password
 
   if (adminPassword === validAdminPassword) {
     adminPanel.style.display = adminPanel.style.display === "none" ? "block" : "none";

@@ -60,6 +60,18 @@ loginButton.addEventListener("click", () => {
   });
 });
 
+//Password Hash
+const getSHA256Hash = async (input) => {
+  const textAsBuffer = new TextEncoder().encode(input);
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", textAsBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hash = hashArray
+    .map((item) => item.toString(16).padStart(2, "0"))
+    .join("");
+  return hash;
+};
+
+
 // Chat Functionality
 const chatBox = document.getElementById("chat-box");
 const messageInput = document.getElementById("message-input");
@@ -153,9 +165,9 @@ const clearChatButton = document.getElementById("clear-chat-button");
 
 adminButton.addEventListener("click", () => {
   const adminPassword = prompt("Enter admin password:");
-  const validAdminPassword = $Admin_Passwd; // Replace with the actual admin password
+  const validAdminPassword = "c9689e2272427085e35b9d3e3e8bed88cb3434828b43b86fc0596cad4c6e270"; // Replace with the actual admin password
 
-  if (adminPassword === validAdminPassword) {
+  if (await getSHA256Hash(adminPassword) === validAdminPassword) {
     adminPanel.style.display = adminPanel.style.display === "none" ? "block" : "none";
   } else {
     alert("Incorrect password. Access denied.");

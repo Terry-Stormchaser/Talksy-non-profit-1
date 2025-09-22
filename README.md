@@ -1,5 +1,5 @@
 # private-chat
-U need special code to get in. Made for me and my friends!
+You need a special code to get in. Made for me and my friends!
 # Private Chat Website
 
 This is a simple private chat website that allows entry only with a special code. The project is built using HTML, CSS, and JavaScript and is hosted on GitHub Pages.

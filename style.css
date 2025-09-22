@@ -14,11 +14,13 @@ body.dark-mode {
 #login-screen, #chat-screen {
   text-align: center;
   padding: 20px;
+  border-radius: 30px;
 }
 
 #error-message {
   color: red;
   font-size: 14px;
+  border-radius: 30px;
 }
 
 /* Chat Header */
@@ -37,10 +39,12 @@ body.dark-mode {
   border: none;
   padding: 10px;
   cursor: pointer;
+  border-radius: 15px;
 }
 
 #admin-button:hover, #toggle-dark-mode:hover {
   background-color: darkorange;
+  border-radius: 15px;
 }
 
 /* Admin Panel */

@@ -16,3 +16,6 @@ This is a simple private chat website that allows entry only with a special code
 
 ## Note
 GitHub Pages only supports static files, so this chat is front-end only and doesn't save messages permanently.
+
+## Credits
+Thanks to lukeandwoofy for original code.

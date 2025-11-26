@@ -35,14 +35,15 @@ let currentUser = ""; // Store the current user's name
 loginButton.addEventListener("click", () => {
   const username = nameInput.value.trim();
   const accessCode = accessCodeInput.value.trim();
-
+  const cryptOfAccessCode = btoa(accessCode)
+  
   if (!username || !accessCode) {
     errorMessage.textContent = "Please enter both your name and the access code.";
     return;
   }
 
-  const validAccessCode = "A330"; // Replace with the actual access code
-  if (accessCode !== validAccessCode) {
+  const validAccessCode = "YWRtaW4xMjM="; // Replace with the actual access code
+  if (cryptOfAccessCode !== validAccessCode) {
     errorMessage.textContent = "Invalid access code. Please try again.";
     return;
   }
